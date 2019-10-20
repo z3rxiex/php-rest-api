@@ -12,7 +12,7 @@
     $db = $database->connect();
 
     // Instantiate stations object
-    $stations = new Stations($db);
+    $stations = new Station($db);
 
     // Get Station
     $result = $stations->read();

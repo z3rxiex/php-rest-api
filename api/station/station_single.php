@@ -5,19 +5,18 @@
     
     
     include_once('../../config/database.php');
-    include_once('../../models/station_single.php');
+    include_once('../../models/stations.php');
 
     // Instantiate DB & connect
     $database = new Database();
     $db = $database->connect();
 
-    $station_id = (isset($_GET['stationID']) ? $_GET['stationID'] : die());
-    
     // Instantiate stations object
     $station = new Station($db);
+    $station->id = (isset($_GET['stationID']) ? $_GET['stationID'] : die());
 
     // Get Station
-    $result = $station->read_single($station_id);
+    $result = $station->read_single();
 
     //Get row count
     $num = $result->rowCount();
