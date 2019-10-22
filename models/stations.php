@@ -129,7 +129,7 @@
                     'LEFT OUTER JOIN intensity_data data15 on station.MAC = data15.MAC and  main.HR15_id = data15.id ' .
                     'LEFT OUTER JOIN intensity_data data16 on station.MAC = data16.MAC and  main.HR16_id = data16.id ' .
                     'LEFT OUTER JOIN intensity_data data17 on station.MAC = data17.MAC and  main.HR17_id = data17.id ' .
-                    'LEFT OUTER JOIN intensity_data data18 on station.MAC = data18.MAC and  main.HR19_id = data18.id ' .
+                    'LEFT OUTER JOIN intensity_data data18 on station.MAC = data18.MAC and  main.HR18_id = data18.id ' .
                     'LEFT OUTER JOIN intensity_data data19 on station.MAC = data19.MAC and  main.HR19_id = data19.id ' .
                     'LEFT OUTER JOIN intensity_data data20 on station.MAC = data20.MAC and  main.HR20_id = data20.id ' .
                     'LEFT OUTER JOIN intensity_data data21 on station.MAC = data21.MAC and  main.HR21_id = data21.id ' .
@@ -156,7 +156,7 @@
                 'FROM intstations station ' .
                 'LEFT OUTER JOIN intensity_main main on station.MAC = main.MAC and main.LogDate = "' . $this->selected_date . '" ' .
                 'LEFT OUTER JOIN intensity_data intdata on station.MAC = intdata.MAC and  main.HR' . $this->selected_hr . '_id = intdata.id';
-
+            
             //Prepare Statement
             $result = $this->conn->prepare($query);
 

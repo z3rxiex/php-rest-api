@@ -15,7 +15,7 @@
     // Instantiate stations object
     $intensity_data = new Station($db);
     $intensity_data->selected_date = date('Y-m-d');
-    $intensity_data->selected_hr = intval(date('H'));
+    $intensity_data->selected_hr = (isset($_GET['selected_hr']) ? $_GET['selected_hr'] : intval(date('H')));
 
     // Get Station
     $result = $intensity_data->data_1hr();
